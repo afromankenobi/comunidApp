@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nueva Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="publicacionForm" (ngSubmit)="guardarPublicacion()">
+
+    <ion-item>
+      <ion-input
+        label="Título"
+        labelPlacement="floating"
+        formControlName="titulo"
+        placeholder="Ingrese el título del aviso">
+      </ion-input>
+    </ion-item>
+
+    <div class="error-message"
+         *ngIf="titulo?.invalid && (titulo?.dirty || titulo?.touched)">
+      <ion-text color="danger" *ngIf="titulo?.errors?.['required']">
+        <small>El título es obligatorio</small>
+      </ion-text>
+      <ion-text color="danger" *ngIf="titulo?.errors?.['minlength']">
+        <small>El título debe tener al menos 5 caracteres</small>
+      </ion-text>
+    </div>
+
+    <ion-item>
+      <ion-textarea
+        label="Descripción"
+        labelPlacement="floating"
+        formControlName="descripcion"
+        rows="4"
+        placeholder="Describa el aviso comunitario">
+      </ion-textarea>
+    </ion-item>
+
+    <div class="error-message"
+         *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)">
+      <ion-text color="danger" *ngIf="descripcion?.errors?.['required']">
+        <small>La descripción es obligatoria</small>
+      </ion-text>
+      <ion-text color="danger" *ngIf="descripcion?.errors?.['minlength']">
+        <small>La descripción debe tener al menos 20 caracteres</small>
+      </ion-text>
+    </div>
+
+    <div class="ion-margin-top">
+      <ion-button expand="block" fill="outline" (click)="capturarFoto()">
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Capturar Fotografía
+      </ion-button>
+    </div>
+
+    <div class="preview-foto ion-margin-top" *ngIf="fotoCapturada">
+      <ion-text color="medium">
+        <p><strong>Vista previa:</strong></p>
+      </ion-text>
+      <ion-img [src]="fotoCapturada" alt="Foto capturada"></ion-img>
+    </div>
+
+    <div class="ion-margin-top">
+      <ion-button
+        expand="block"
+        type="submit"
+        [disabled]="publicacionForm.invalid">
+        Guardar Publicación
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

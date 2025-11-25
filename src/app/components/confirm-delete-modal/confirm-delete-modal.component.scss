@@ -1,0 +1,44 @@
+ion-header {
+  ion-toolbar {
+    --background: #f44336;
+    --color: white;
+  }
+
+  ion-title {
+    font-weight: 600;
+  }
+}
+
+ion-content {
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-top: 24px;
+  --padding-bottom: 24px;
+
+  p {
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 12px;
+
+    &:first-of-type {
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    &:last-of-type {
+      color: #666;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+ion-footer {
+  ion-toolbar {
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+
+  ion-button {
+    font-weight: 500;
+  }
+}

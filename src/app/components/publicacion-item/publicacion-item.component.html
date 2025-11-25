@@ -1,0 +1,19 @@
+<ion-item>
+  <ion-thumbnail slot="start" *ngIf="publicacion.foto">
+    <ion-img [src]="publicacion.foto" alt="Foto de la publicación"></ion-img>
+  </ion-thumbnail>
+
+  <ion-label>
+    <h2>{{ publicacion.titulo }}</h2>
+    <p>{{ publicacion.descripcion }}</p>
+    <p class="fecha-publicacion">
+      <ion-text color="medium">
+        <small>{{ publicacion.fecha | formatoFecha }}</small>
+      </ion-text>
+    </p>
+  </ion-label>
+
+  <ion-button slot="end" color="danger" fill="outline" (click)="onEliminar()">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-button>
+</ion-item>

@@ -1,0 +1,36 @@
+ion-item {
+  --border-radius: 12px;
+  margin-bottom: 12px;
+
+  ion-thumbnail {
+    --size: 80px;
+    --border-radius: 8px;
+    margin-right: 12px;
+  }
+
+  ion-label {
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .fecha-publicacion {
+      small {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  ion-button {
+    margin-left: 8px;
+  }
+}
