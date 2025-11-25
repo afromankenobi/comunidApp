@@ -1,0 +1,7 @@
+{
+  "name": "comunidApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
